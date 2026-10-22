@@ -217,8 +217,11 @@ RunEvent {
 ≥ `min_count` refs) and no non-`depends_on` block reason; `step.verified`
 requires the step completed, actor holds `verification.role` and is not the
 completer; `scan` value must match `expect`; `signoff.role` must be held by
-the actor; `run.completed` requires `can_complete`; supervisor-only types
-require `supervisor`.
+the actor; `run.completed` requires `can_complete` and role `inspector` or
+`supervisor`; supervisor-only types (`step.reopened`, `ncr.dispositioned`,
+`ncr.closed`, `conflict.resolved`, `run.aborted`) require `supervisor`;
+everything else requires `operator` (inspectors and supervisors may also
+operate). Events on a `completed`/`aborted` run are rejected.
 
 Shared fixtures in `spec/test-vectors/projection/*.json` define
 `{revision_content, events[], expected_step_states}`; both implementations
@@ -266,6 +269,11 @@ Revision `content_hash` = same canonical hash over `content`.
   `DELETE /runs/{run}/checkout` after the device has pushed its events.
 - Client may write step events offline **only** for runs it has checked
   out; otherwise the run is read-only offline (UI enforces).
+- **Runs created offline** (`run.created` with `offline: true`) are implicitly
+  checked out by the creating device: the client records a local checkout
+  immediately, and on ingest of that `run.created` the server grants the same
+  device a run checkout (default TTL) starting at the event's `client_ts`.
+  Runs created online get no implicit checkout; devices use step locks.
 - **Evidence is never rejected for lock reasons.** On ingest the server
   checks whether the event's `device_id` held a valid step lock or run
   checkout at `client_ts`:
@@ -314,10 +322,14 @@ until uploaded.
   from a configurable claim (`OIDC_ROLES_CLAIM`, default `roles`) merged with
   DB roles.
 - **Dev mode** (`AUTH_MODE=dev`): `Authorization: Dev <user-id>`; seeded users
-  for every role. Never enabled when `ENV=production`.
+  for every role, listed unauthenticated at `GET /auth/dev-users` (404 when not
+  in dev mode). Never enabled when `ENV=production`.
+- `GET /me` → current `User` (with roles); `PUT /me/pin {pin}` sets the PIN.
 - **Offline PIN**: each user sets a 6+ digit PIN online. Server stores
   `pin_verifier = PBKDF2-SHA256(pin, salt, 210000)` as
-  `"pbkdf2-sha256$210000$<salt_b64>$<hash_b64>"` and ships it in pull to devices.
+  `"pbkdf2-sha256$210000$<salt_b64>$<hash_b64>"` (16-byte random salt, 32-byte
+  derived key, standard base64 with padding; PIN = 6–12 ASCII digits, UTF-8)
+  and ships it in pull to devices.
   Offline, the device verifies the PIN locally (WebCrypto) to attribute each
   sign-off to the person at the tablet (`auth_method: "pin"`). Multiple users
   can sign on one tablet (inspector countersign).
