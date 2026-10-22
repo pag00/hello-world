@@ -40,3 +40,27 @@ export async function apiRequest<T>(method: string, path: string, body?: unknown
   }
   return data as T
 }
+
+/** Raw request (blobs, HEAD, PDFs): same auth and offline mapping as apiRequest, returns the Response. */
+export async function apiFetch(method: string, path: string, init?: RequestInit): Promise<Response> {
+  const cfg = getStepTrackConfig()
+  const headers = new Headers(init?.headers)
+  const auth = await cfg.auth.getAuthorizationHeader()
+  if (auth) headers.set('Authorization', auth)
+  let res: Response
+  try {
+    res = await fetch(cfg.apiBaseUrl + path, { ...init, method, headers })
+  } catch {
+    throw new OfflineError()
+  }
+  if (!res.ok && !(method === 'HEAD' && res.status === 404)) {
+    let body: unknown = null
+    try {
+      body = res.headers.get('content-type')?.includes('json') ? await res.json() : await res.text()
+    } catch {
+      /* ignore */
+    }
+    throw new ApiError(res.status, body, `${method} ${path}: ${res.status} ${res.statusText}`)
+  }
+  return res
+}

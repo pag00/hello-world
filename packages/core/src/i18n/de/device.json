@@ -1,0 +1,66 @@
+{
+  "device": {
+    "scan": {
+      "button": "Scannen",
+      "title": "Code scannen",
+      "hint": "QR-Code oder Barcode in den Rahmen halten",
+      "starting": "Kamera wird gestartet …",
+      "expectExact": "Erwartet: {value}",
+      "expectPattern": "Erwartetes Format: {pattern}",
+      "torchOn": "Licht an",
+      "torchOff": "Licht aus",
+      "mismatchTitle": "Code passt nicht",
+      "mismatch": "Der gescannte Code entspricht nicht der Erwartung dieses Schritts:",
+      "rescan": "Erneut scannen",
+      "useAnyway": "Trotzdem übernehmen"
+    },
+    "photo": {
+      "button": "Foto",
+      "processing": "Foto wird verarbeitet …"
+    },
+    "ocr": {
+      "button": "Vom Foto ablesen",
+      "title": "Wert vom Foto ablesen",
+      "reading": "Wert wird erkannt …",
+      "value": "Wert",
+      "valueHint": "Mit der Anzeige vergleichen und falsche Ziffern korrigieren.",
+      "candidates": "Weitere mögliche Werte",
+      "raw": "Erkannter Text",
+      "confidence": "Sicherheit {pct} %",
+      "lowConfidence": "Geringe Sicherheit – jede Ziffer mit der Anzeige vergleichen.",
+      "edited": "Dieser Wert weicht vom erkannten Wert ab. Sicherstellen, dass er der Anzeige entspricht.",
+      "confirm": "Wert übernehmen",
+      "retake": "Neues Foto",
+      "noReading": "Es wurde keine Zahl erkannt. Neues Foto aufnehmen oder schließen und den Wert im Feld eintippen.",
+      "unavailable": "Das Ablesen von Zahlen aus Fotos ist auf diesem Gerät nicht verfügbar. Bitte den Wert manuell eingeben.",
+      "failed": "Der Wert konnte nicht erkannt werden. Schließen und den Wert im Feld eintippen.",
+      "invalid": "Bitte eine Zahl eingeben.",
+      "tooManyDecimals": "Höchstens {n} Nachkommastellen – der Wert wird nie gerundet.",
+      "photoAlt": "Foto der Anzeige"
+    },
+    "errors": {
+      "cameraDenied": "Der Kamerazugriff wurde verweigert. Kamerazugriff für StepTrack in den Browser- bzw. Systemeinstellungen erlauben und erneut versuchen.",
+      "noCamera": "Auf diesem Gerät wurde keine Kamera gefunden.",
+      "cameraBusy": "Die Kamera konnte nicht gestartet werden. Andere Apps mit Kamerazugriff schließen und erneut versuchen.",
+      "insecureContext": "Die Kamera funktioniert nur über eine sichere (https-)Verbindung.",
+      "scannerUnsupported": "Scannen wird auf diesem Gerät nicht unterstützt. Bitte den Code eintippen.",
+      "scannerModuleUnavailable": "Das Google-Barcode-Scanner-Modul ist noch nicht installiert. Einmal mit dem Internet verbinden, damit es heruntergeladen werden kann.",
+      "scannerModuleFailed": "Das Google-Barcode-Scanner-Modul konnte nicht installiert werden. Verbindung und Google-Play-Dienste prüfen.",
+      "noPreview": "Die Scanner-Vorschau kann nicht angezeigt werden.",
+      "ocrUnavailable": "Das Ablesen von Zahlen aus Fotos ist auf diesem Gerät nicht verfügbar. Bitte den Wert manuell eingeben.",
+      "ocrFailed": "Der Wert konnte nicht vom Foto gelesen werden. Bitte manuell eingeben.",
+      "imageUnreadable": "Das Foto konnte nicht gelesen werden. Bitte erneut aufnehmen.",
+      "cameraFailed": "Die Kamera konnte kein Foto aufnehmen.",
+      "scanFailed": "Scannen fehlgeschlagen. Erneut versuchen oder den Code eintippen."
+    },
+    "app": {
+      "offlineReady": "StepTrack ist bereit für den Offline-Betrieb.",
+      "updateAvailable": "Eine neue Version von StepTrack ist verfügbar.",
+      "updateHint": "Zuerst den aktuellen Schritt abschließen – die Aktualisierung lädt die App neu. Erfasste Daten bleiben erhalten.",
+      "updateNow": "Jetzt aktualisieren",
+      "later": "Später",
+      "dismiss": "OK",
+      "configError": "StepTrack ist nicht korrekt konfiguriert: {detail}. Bitte an die Administration wenden."
+    }
+  }
+}

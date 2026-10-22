@@ -1,0 +1,364 @@
+{
+  "run": {
+    "serial": "Serial",
+    "workOrder": "Work order",
+    "revShort": "Rev {rev}",
+    "obsolete": "Obsolete revision",
+    "obsoleteHint": "A newer revision has been released. This run continues on the revision it was started with.",
+    "unknownProcedure": "Procedure not on this device",
+    "activeRun": "Active on this tablet",
+    "progress": "{done} of {total} steps done",
+    "record": "Record",
+    "notOnDevice": "This run is not available on this tablet (yet). It appears after the next sync if it exists.",
+    "stepNotInRevision": "This step does not exist in the run's procedure revision.",
+    "backToRun": "Back to run",
+    "nextStep": "Next: {step}",
+    "scanWorkstation": "Scan workstation",
+    "scanNoStepHere": "No step of this run is done at workstation {code}.",
+    "dependsOn": "Waits for: {steps}",
+    "conflictHint": "Conflicting records — a supervisor must decide which ones count.",
+    "awaitsVerification": "Completed — waiting for verification by: {role}",
+    "verificationRequired": "Verification required",
+    "completedBy": "Completed by {name} at {time}",
+    "verifiedBy": "Verified by {name} at {time}",
+    "blockedExplain": "This run is blocked: a value is out of tolerance, a tool was not valid, or records conflict. Raise the NCR or ask a supervisor.",
+    "completedBanner": "Run completed ({time}). The record is closed.",
+    "abortedBanner": "Run aborted. The record is closed.",
+    "locations": "Workstation {codes}",
+    "instructions": "Instructions",
+    "referenceImage": "Reference image",
+    "noInputs": "Nothing to record in this step.",
+    "stepDoneReadOnly": "This step is completed. Values can only change after a supervisor reopens it.",
+    "links": {
+      "record": "As-run record",
+      "traveller": "Traveller"
+    },
+    "status": {
+      "active": "Active",
+      "blocked": "Blocked",
+      "completed": "Completed",
+      "aborted": "Aborted"
+    },
+    "stepState": {
+      "pending": "Not started",
+      "in_progress": "In progress",
+      "blocked": "Blocked",
+      "completed": "Completed",
+      "verified": "Verified",
+      "conflict": "Conflict"
+    },
+    "block": {
+      "depends_on": "Waiting for earlier steps",
+      "out_of_tolerance": "Out of tolerance — NCR needed",
+      "tool_expired": "Tool calibration expired — NCR needed",
+      "tool_unknown": "Unknown tool — NCR needed",
+      "open_ncr": "Open NCR"
+    },
+    "readOnly": {
+      "offline_not_checked_out": "Offline and this run is not checked out to this tablet: you can look, but not record. Check the run out while online to work offline.",
+      "locked_by_other": "Another tablet is working on this step. You can look, but not record.",
+      "not_locked": "This tablet does not hold the step yet. Records can be made once the step is taken.",
+      "run_closed": "This run is closed. Nothing more can be recorded.",
+      "checked_out_by_other": "This run is checked out to another tablet for offline work. It is read-only here until that tablet releases it."
+    },
+    "lock": {
+      "acquiring": "Taking this step for this tablet…",
+      "failed": "Could not take this step. Check the connection and try again.",
+      "refusedBy": "{name} is working on this step on another tablet (until {until}). You can look, but not record.",
+      "refused": "Another tablet holds this step or has the run checked out. You can look, but not record.",
+      "retry": "Try again",
+      "takeOver": "Take over step",
+      "takeOverTitle": "Take over this step?",
+      "takeOverText": "{name} currently holds this step. Taking over is logged in the run record. Anything the other tablet still records is kept but marked as a conflict for a supervisor to resolve.",
+      "someone": "Someone",
+      "heldBy": "{name} working",
+      "thisTablet": "This tablet"
+    },
+    "checkout": {
+      "title": "Offline work",
+      "explain": "To keep working on this run without a connection, check it out to this tablet first. While it is checked out, only this tablet can record on the run.",
+      "duration": "For",
+      "hours": "{n} hours",
+      "checkout": "Check out to this tablet",
+      "offlineCannot": "Checking out needs a connection. While offline this run is read-only on this tablet.",
+      "mine": "Checked out to this tablet until {until}. You can work on it offline.",
+      "implicit": "Started offline on this tablet: it stays checked out here; the server confirms this at the next sync.",
+      "releaseExplain": "Release the run when you are done so other tablets can work on it. The release happens only after this tablet has uploaded all its records for the run.",
+      "release": "Release checkout",
+      "releaseOnline": "Releasing needs a connection.",
+      "releasePending": "Release requested. Records of this run are still being uploaded; the checkout is released automatically afterwards.",
+      "pendingCount": "{n} record waiting on this tablet. | {n} records waiting on this tablet.",
+      "released": "Checkout released. Other tablets can work on this run now.",
+      "refused": "Checkout refused: someone is working on a step of this run or it is checked out elsewhere.",
+      "other": "Checked out to another tablet until {until}."
+    },
+    "ncr": {
+      "title": "Nonconformance reports",
+      "none": "No NCRs for this run.",
+      "raise": "Raise NCR",
+      "raiseTitle": "Raise nonconformance report",
+      "description": "What is wrong?",
+      "numberLater": "The NCR number is assigned by the server; offline NCRs get it at the next sync.",
+      "noNumber": "NCR (no number yet)",
+      "runLevel": "Whole run",
+      "runLevelContext": "This NCR concerns the whole run, not one step.",
+      "stepContext": "Step {step}",
+      "inputContext": "For: {label}",
+      "status": {
+        "open": "Open",
+        "dispositioned": "Dispositioned",
+        "closed": "Closed"
+      }
+    },
+    "completeRun": {
+      "title": "Close the run",
+      "button": "Complete run",
+      "ready": "All steps are done and verified, no NCR is open.",
+      "stepsOpen": "{n} step is not done yet. | {n} steps are not done yet.",
+      "stepsUnverified": "{n} step waits for verification. | {n} steps wait for verification.",
+      "openNcrs": "{n} NCR is still open. | {n} NCRs are still open.",
+      "conflicts": "Conflicting records must be resolved by a supervisor.",
+      "confirmTitle": "Complete this run?",
+      "confirmText": "The record for serial {serial} is closed. Nothing can be recorded afterwards."
+    },
+    "abort": {
+      "button": "Abort run",
+      "title": "Abort this run?",
+      "text": "The run is closed without completion. All records are kept. Give a reason for the record."
+    },
+    "reason": {
+      "label": "Reason",
+      "hint": "Becomes part of the permanent record."
+    },
+    "correction": {
+      "start": "Correct value",
+      "explain": "The current value stays in the record and is marked as corrected. Enter the new value and why it changed.",
+      "reason": "Reason for the correction",
+      "reasonRequired": "Enter a reason for the correction.",
+      "cancel": "Cancel correction",
+      "noteFailed": "The new value was recorded, but the reason could not be saved. Add it as a note."
+    },
+    "meta": {
+      "by": "{name}, {time}",
+      "pin": "PIN",
+      "offline": "offline",
+      "notSynced": "not uploaded yet",
+      "ocrRaw": "OCR read: {raw}",
+      "history": "{n} earlier value | {n} earlier values"
+    },
+    "source": {
+      "manual": "Entered",
+      "ocr": "OCR",
+      "scan": "Scanned"
+    },
+    "flag": {
+      "conflict": "Conflict",
+      "unlocked": "Recorded without lock",
+      "late_lock": "Lock had expired",
+      "tool_expired": "Tool expired",
+      "tool_unknown": "Unknown tool",
+      "blob_missing": "Photo not uploaded",
+      "out_of_tolerance": "Out of tolerance"
+    },
+    "value": {
+      "none": "Not recorded.",
+      "yes": "Yes",
+      "photos": "{n} photo | {n} photos"
+    },
+    "check": {
+      "confirm": "Confirm",
+      "done": "Confirmed"
+    },
+    "number": {
+      "min": "min {v}",
+      "nominal": "nom {v}",
+      "max": "max {v}",
+      "noLimits": "No limits",
+      "fromOcr": "Read by OCR — check the value before recording",
+      "recordOut": "Record (out of tolerance)",
+      "state": {
+        "in": "Within tolerance",
+        "low": "Below minimum — will be recorded as out of tolerance",
+        "high": "Above maximum — will be recorded as out of tolerance",
+        "invalid": "Not a valid number",
+        "too_many_decimals": "Too many decimal places (exactly {decimals} allowed). Values are never rounded."
+      },
+      "recorded": {
+        "low": "Below minimum — out of tolerance",
+        "high": "Above maximum — out of tolerance",
+        "invalid": "Not a valid measurement — out of tolerance"
+      },
+      "ncrNeeded": "The step cannot be completed until an NCR is raised for this value.",
+      "ncrCovered": "An NCR covers this value.",
+      "ncrPrefill": "{label}: measured {value} {unit}, limits {min} to {max} {unit}."
+    },
+    "photo": {
+      "take": "Take photo",
+      "addAnother": "Add photo",
+      "countMin": "{n} (min {min})",
+      "countMinMax": "{n} (min {min}, max {max})",
+      "full": "Maximum number of photos reached.",
+      "saving": "Saving photo…",
+      "duplicate": "This exact photo is already recorded.",
+      "removeSome": "Remove photos",
+      "removeHint": "Mark the photos to remove. At least one photo must remain; to replace the only photo, add the new one first.",
+      "remove": "Remove",
+      "keep": "Keep",
+      "saveRemoval": "Remove {n} photo(s)"
+    },
+    "scan": {
+      "scanTool": "Scan tool",
+      "scanPart": "Scan code",
+      "typeInstead": "Type instead",
+      "empty": "Nothing was scanned.",
+      "mismatch": "\"{value}\" is not what this step expects.",
+      "expectExact": "Expected: {value}",
+      "expectPattern": "Expected format: {pattern}",
+      "toolBlocked": {
+        "expired": "Tool {code}: calibration expired. Use a calibrated tool.",
+        "unknown": "Tool {code} is not in the tool register.",
+        "inactive": "Tool {code} is withdrawn from use."
+      },
+      "offlineToolWarning": "You are offline. If you record it anyway, the server flags it and the step needs an NCR before it can be completed.",
+      "recordAnyway": "Record anyway",
+      "ncrNeeded": "Raise an NCR for this tool before completing the step.",
+      "ncrCovered": "An NCR covers this tool.",
+      "ncrPrefill": "{label}: tool {code} used — {status}"
+    },
+    "tool": {
+      "ok": "Calibration valid",
+      "expired": "Calibration expired",
+      "unknown": "Not in the tool register",
+      "inactive": "Withdrawn from use",
+      "due": "due {date}"
+    },
+    "signoff": {
+      "sign": "Sign off",
+      "requiresRole": "Requires role: {role}",
+      "signedBy": "Signed off by {name}",
+      "dialogTitle": "Sign off: {label}"
+    },
+    "complete": {
+      "button": "Complete step",
+      "asOther": "Complete as someone else",
+      "asOtherTitle": "Who completed this step?",
+      "notYet": "Before the step can be completed:",
+      "ready": "Everything required is recorded."
+    },
+    "problems": {
+      "toolNeedsNcr": "A tool recorded offline is not valid in the register. Raise an NCR before completing the step."
+    },
+    "verify": {
+      "button": "Verify step",
+      "dialogTitle": "Verify step",
+      "notCompleter": "The person who completed the step cannot verify it."
+    },
+    "reopen": {
+      "title": "Reopen step",
+      "explain": "Supervisor only. Reopening keeps all records; the step must be completed (and verified) again.",
+      "button": "Reopen step",
+      "confirmText": "Why must this step be reopened?",
+      "continue": "Continue",
+      "pinTitle": "Supervisor confirmation"
+    },
+    "notes": {
+      "title": "Notes",
+      "none": "No notes.",
+      "add": "Add note",
+      "system": "system"
+    },
+    "conflict": {
+      "title": "Conflicting records",
+      "explain": "Records for this step were made on different tablets at the same time. Until a supervisor decides which ones count, the step and the run are blocked. Nothing is deleted: rejected records stay in the record.",
+      "noneFound": "No competing records found on this tablet. Sync and try again.",
+      "pickOne": "Choose the value that counts.",
+      "stepRecords": "Other records of this step",
+      "device": "tablet …{id}",
+      "resolve": "Resolve: keep {keep}, reject {reject}",
+      "supervisorOnly": "Only a supervisor can resolve the conflict."
+    },
+    "eventType": {
+      "run_created": "Run started",
+      "step_started": "Step started",
+      "input_recorded": "Value recorded",
+      "step_completed": "Step completed",
+      "step_verified": "Step verified",
+      "step_reopened": "Step reopened",
+      "note_added": "Note",
+      "ncr_raised": "NCR raised",
+      "ncr_dispositioned": "NCR dispositioned",
+      "ncr_closed": "NCR closed",
+      "conflict_resolved": "Conflict resolved",
+      "run_completed": "Run completed",
+      "run_aborted": "Run aborted"
+    },
+    "errors": {
+      "offline": "This needs a connection.",
+      "conflict409": "Refused: someone else holds this step or run right now.",
+      "forbidden": "You are not allowed to do this.",
+      "server": "Server error ({status}). {detail}",
+      "unknown": "Something went wrong. Try again.",
+      "device": "The camera or scanner is not available."
+    },
+    "home": {
+      "scan": "Scan",
+      "scanHint": "Scan a workstation, run, part or tool label to jump straight to it.",
+      "offlineTitle": "Offline",
+      "offlineWorks": "You can keep working on runs checked out to this tablet, start new runs (they are checked out here automatically), record values and photos, and sign with your PIN. Everything is uploaded when the connection returns.",
+      "offlineReadOnly": "Runs that are not checked out to this tablet are read-only until you are back online.",
+      "thisTablet": "On this tablet",
+      "noDeviceRuns": "No run is active or checked out on this tablet.",
+      "checkedOut": "Checked out here",
+      "startTitle": "Start a run",
+      "startRun": "Start run",
+      "noReleased": "No released procedures on this tablet. Sync while online.",
+      "recent": "Recent runs"
+    },
+    "start": {
+      "title": "Start run",
+      "procedure": "Procedure",
+      "chooseProcedure": "Choose a released procedure",
+      "revisionNote": "The run follows revision {rev} until it is closed, even if a newer revision is released.",
+      "scanSerial": "Scan serial",
+      "scannedPart": "Part label scanned (part number {pn}).",
+      "notASerial": "That label is not a part serial.",
+      "duplicate": "Serial {serial} already has an open run of this procedure.",
+      "offline": "Offline: the run is created on this tablet and checked out here. It is uploaded at the next sync.",
+      "submit": "Start run"
+    },
+    "list": {
+      "title": "Runs",
+      "filter": "Filter by status",
+      "filters": {
+        "open": "Open",
+        "active": "Active",
+        "blocked": "Blocked",
+        "completed": "Completed",
+        "aborted": "Aborted",
+        "all": "All"
+      },
+      "searchPlaceholder": "Serial or work order",
+      "scanSerial": "Scan",
+      "empty": "No runs.",
+      "noMatch": "No run matches \"{q}\"."
+    },
+    "qr": {
+      "title": "Label",
+      "resolving": "Looking up label…",
+      "chooseRunWorkstation": "Which run at {code}?",
+      "chooseRunWorkstationHint": "Several runs (or a run other than the active one) have steps at this workstation. Choose the run you are working on.",
+      "chooseRunPart": "Runs for serial {serial}",
+      "chooseRunPartHint": "Choose the run.",
+      "nothingActionable": "Nothing to do at {code} for {serial} right now",
+      "nothingActionableHint": "The steps here are done, wait for earlier steps, or need a supervisor.",
+      "openRun": "Open run",
+      "allRuns": "All runs",
+      "workstationNone": "No open run on this tablet has steps at workstation {code}.",
+      "partNone": "No run for part {pn}, serial {serial} on this tablet.",
+      "startWithSerial": "Start a run for {serial}",
+      "toolTitle": "Tool {code}",
+      "unknown": "This code is not a StepTrack label.",
+      "dismiss": "Dismiss"
+    }
+  }
+}

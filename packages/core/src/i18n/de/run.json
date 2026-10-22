@@ -1,0 +1,364 @@
+{
+  "run": {
+    "serial": "Seriennummer",
+    "workOrder": "Auftrag",
+    "revShort": "Rev. {rev}",
+    "obsolete": "Veraltete Revision",
+    "obsoleteHint": "Eine neuere Revision ist freigegeben. Dieser Durchlauf läuft mit der Revision weiter, mit der er gestartet wurde.",
+    "unknownProcedure": "Verfahren nicht auf diesem Gerät",
+    "activeRun": "Aktiv auf diesem Tablet",
+    "progress": "{done} von {total} Schritten erledigt",
+    "record": "Erfassen",
+    "notOnDevice": "Dieser Durchlauf ist auf diesem Tablet (noch) nicht vorhanden. Falls er existiert, erscheint er nach der nächsten Synchronisation.",
+    "stepNotInRevision": "Diesen Schritt gibt es in der Verfahrensrevision des Durchlaufs nicht.",
+    "backToRun": "Zurück zum Durchlauf",
+    "nextStep": "Weiter: {step}",
+    "scanWorkstation": "Arbeitsplatz scannen",
+    "scanNoStepHere": "Kein Schritt dieses Durchlaufs wird am Arbeitsplatz {code} ausgeführt.",
+    "dependsOn": "Wartet auf: {steps}",
+    "conflictHint": "Widersprüchliche Einträge – ein Supervisor muss entscheiden, welche gelten.",
+    "awaitsVerification": "Abgeschlossen – wartet auf Prüfung durch: {role}",
+    "verificationRequired": "Prüfung erforderlich",
+    "completedBy": "Abgeschlossen von {name} am {time}",
+    "verifiedBy": "Geprüft von {name} am {time}",
+    "blockedExplain": "Dieser Durchlauf ist blockiert: ein Wert liegt außerhalb der Toleranz, ein Werkzeug war nicht gültig oder Einträge widersprechen sich. NCR erstellen oder Supervisor fragen.",
+    "completedBanner": "Durchlauf abgeschlossen ({time}). Die Aufzeichnung ist geschlossen.",
+    "abortedBanner": "Durchlauf abgebrochen. Die Aufzeichnung ist geschlossen.",
+    "locations": "Arbeitsplatz {codes}",
+    "instructions": "Anweisung",
+    "referenceImage": "Referenzbild",
+    "noInputs": "In diesem Schritt ist nichts zu erfassen.",
+    "stepDoneReadOnly": "Dieser Schritt ist abgeschlossen. Werte können erst geändert werden, nachdem ein Supervisor ihn wieder geöffnet hat.",
+    "links": {
+      "record": "Durchlaufprotokoll",
+      "traveller": "Laufkarte"
+    },
+    "status": {
+      "active": "Aktiv",
+      "blocked": "Blockiert",
+      "completed": "Abgeschlossen",
+      "aborted": "Abgebrochen"
+    },
+    "stepState": {
+      "pending": "Nicht begonnen",
+      "in_progress": "In Arbeit",
+      "blocked": "Blockiert",
+      "completed": "Abgeschlossen",
+      "verified": "Geprüft",
+      "conflict": "Konflikt"
+    },
+    "block": {
+      "depends_on": "Wartet auf frühere Schritte",
+      "out_of_tolerance": "Außerhalb der Toleranz – NCR nötig",
+      "tool_expired": "Werkzeugkalibrierung abgelaufen – NCR nötig",
+      "tool_unknown": "Unbekanntes Werkzeug – NCR nötig",
+      "open_ncr": "Offene NCR"
+    },
+    "readOnly": {
+      "offline_not_checked_out": "Offline, und dieser Durchlauf ist nicht auf dieses Tablet ausgecheckt: Ansehen ja, erfassen nein. Durchlauf online auschecken, um offline zu arbeiten.",
+      "locked_by_other": "Ein anderes Tablet arbeitet an diesem Schritt. Ansehen ja, erfassen nein.",
+      "not_locked": "Dieses Tablet hält den Schritt noch nicht. Erfassen ist möglich, sobald der Schritt übernommen ist.",
+      "run_closed": "Dieser Durchlauf ist geschlossen. Es kann nichts mehr erfasst werden.",
+      "checked_out_by_other": "Dieser Durchlauf ist für Offline-Arbeit auf ein anderes Tablet ausgecheckt. Hier ist er schreibgeschützt, bis das andere Tablet ihn freigibt."
+    },
+    "lock": {
+      "acquiring": "Schritt wird für dieses Tablet übernommen …",
+      "failed": "Der Schritt konnte nicht übernommen werden. Verbindung prüfen und erneut versuchen.",
+      "refusedBy": "{name} arbeitet auf einem anderen Tablet an diesem Schritt (bis {until}). Ansehen ja, erfassen nein.",
+      "refused": "Ein anderes Tablet hält diesen Schritt oder hat den Durchlauf ausgecheckt. Ansehen ja, erfassen nein.",
+      "retry": "Erneut versuchen",
+      "takeOver": "Schritt übernehmen",
+      "takeOverTitle": "Diesen Schritt übernehmen?",
+      "takeOverText": "{name} hält diesen Schritt gerade. Die Übernahme wird im Protokoll vermerkt. Was das andere Tablet noch erfasst, bleibt erhalten, wird aber als Konflikt markiert und muss von einem Supervisor aufgelöst werden.",
+      "someone": "Jemand",
+      "heldBy": "{name} arbeitet",
+      "thisTablet": "Dieses Tablet"
+    },
+    "checkout": {
+      "title": "Offline-Arbeit",
+      "explain": "Um ohne Verbindung an diesem Durchlauf weiterzuarbeiten, zuerst auf dieses Tablet auschecken. Solange er ausgecheckt ist, kann nur dieses Tablet darin erfassen.",
+      "duration": "Für",
+      "hours": "{n} Stunden",
+      "checkout": "Auf dieses Tablet auschecken",
+      "offlineCannot": "Auschecken braucht eine Verbindung. Offline ist dieser Durchlauf auf diesem Tablet schreibgeschützt.",
+      "mine": "Auf dieses Tablet ausgecheckt bis {until}. Offline-Arbeit ist möglich.",
+      "implicit": "Offline auf diesem Tablet gestartet: bleibt hier ausgecheckt; der Server bestätigt das bei der nächsten Synchronisation.",
+      "releaseExplain": "Den Durchlauf nach getaner Arbeit freigeben, damit andere Tablets daran arbeiten können. Die Freigabe erfolgt erst, wenn dieses Tablet alle Einträge des Durchlaufs hochgeladen hat.",
+      "release": "Checkout freigeben",
+      "releaseOnline": "Freigeben braucht eine Verbindung.",
+      "releasePending": "Freigabe angefordert. Einträge dieses Durchlaufs werden noch hochgeladen; danach wird der Checkout automatisch freigegeben.",
+      "pendingCount": "{n} Eintrag wartet auf diesem Tablet. | {n} Einträge warten auf diesem Tablet.",
+      "released": "Checkout freigegeben. Andere Tablets können jetzt an diesem Durchlauf arbeiten.",
+      "refused": "Checkout abgelehnt: jemand arbeitet an einem Schritt dieses Durchlaufs, oder er ist anderswo ausgecheckt.",
+      "other": "Auf ein anderes Tablet ausgecheckt bis {until}."
+    },
+    "ncr": {
+      "title": "Abweichungsberichte (NCR)",
+      "none": "Keine NCR zu diesem Durchlauf.",
+      "raise": "NCR erstellen",
+      "raiseTitle": "Abweichungsbericht erstellen",
+      "description": "Was ist nicht in Ordnung?",
+      "numberLater": "Die NCR-Nummer vergibt der Server; offline erstellte NCR erhalten sie bei der nächsten Synchronisation.",
+      "noNumber": "NCR (noch ohne Nummer)",
+      "runLevel": "Gesamter Durchlauf",
+      "runLevelContext": "Diese NCR betrifft den ganzen Durchlauf, nicht einen Schritt.",
+      "stepContext": "Schritt {step}",
+      "inputContext": "Für: {label}",
+      "status": {
+        "open": "Offen",
+        "dispositioned": "Entschieden",
+        "closed": "Geschlossen"
+      }
+    },
+    "completeRun": {
+      "title": "Durchlauf abschließen",
+      "button": "Durchlauf abschließen",
+      "ready": "Alle Schritte sind erledigt und geprüft, keine NCR ist offen.",
+      "stepsOpen": "{n} Schritt ist noch nicht erledigt. | {n} Schritte sind noch nicht erledigt.",
+      "stepsUnverified": "{n} Schritt wartet auf Prüfung. | {n} Schritte warten auf Prüfung.",
+      "openNcrs": "{n} NCR ist noch offen. | {n} NCR sind noch offen.",
+      "conflicts": "Widersprüchliche Einträge müssen von einem Supervisor aufgelöst werden.",
+      "confirmTitle": "Diesen Durchlauf abschließen?",
+      "confirmText": "Die Aufzeichnung für Seriennummer {serial} wird geschlossen. Danach kann nichts mehr erfasst werden."
+    },
+    "abort": {
+      "button": "Durchlauf abbrechen",
+      "title": "Diesen Durchlauf abbrechen?",
+      "text": "Der Durchlauf wird ohne Abschluss geschlossen. Alle Einträge bleiben erhalten. Bitte einen Grund für das Protokoll angeben."
+    },
+    "reason": {
+      "label": "Grund",
+      "hint": "Wird Teil der dauerhaften Aufzeichnung."
+    },
+    "correction": {
+      "start": "Wert korrigieren",
+      "explain": "Der bisherige Wert bleibt in der Aufzeichnung und wird als korrigiert markiert. Neuen Wert und den Grund der Änderung eingeben.",
+      "reason": "Grund der Korrektur",
+      "reasonRequired": "Bitte einen Grund für die Korrektur eingeben.",
+      "cancel": "Korrektur abbrechen",
+      "noteFailed": "Der neue Wert wurde erfasst, der Grund konnte aber nicht gespeichert werden. Bitte als Notiz ergänzen."
+    },
+    "meta": {
+      "by": "{name}, {time}",
+      "pin": "PIN",
+      "offline": "offline",
+      "notSynced": "noch nicht hochgeladen",
+      "ocrRaw": "OCR gelesen: {raw}",
+      "history": "{n} früherer Wert | {n} frühere Werte"
+    },
+    "source": {
+      "manual": "Eingegeben",
+      "ocr": "OCR",
+      "scan": "Gescannt"
+    },
+    "flag": {
+      "conflict": "Konflikt",
+      "unlocked": "Ohne Sperre erfasst",
+      "late_lock": "Sperre war abgelaufen",
+      "tool_expired": "Werkzeug abgelaufen",
+      "tool_unknown": "Unbekanntes Werkzeug",
+      "blob_missing": "Foto nicht hochgeladen",
+      "out_of_tolerance": "Außerhalb der Toleranz"
+    },
+    "value": {
+      "none": "Nicht erfasst.",
+      "yes": "Ja",
+      "photos": "{n} Foto | {n} Fotos"
+    },
+    "check": {
+      "confirm": "Bestätigen",
+      "done": "Bestätigt"
+    },
+    "number": {
+      "min": "min {v}",
+      "nominal": "nom {v}",
+      "max": "max {v}",
+      "noLimits": "Keine Grenzwerte",
+      "fromOcr": "Per OCR gelesen – Wert vor dem Erfassen prüfen",
+      "recordOut": "Erfassen (außerhalb der Toleranz)",
+      "state": {
+        "in": "Innerhalb der Toleranz",
+        "low": "Unter dem Minimum – wird als außerhalb der Toleranz erfasst",
+        "high": "Über dem Maximum – wird als außerhalb der Toleranz erfasst",
+        "invalid": "Keine gültige Zahl",
+        "too_many_decimals": "Zu viele Nachkommastellen (genau {decimals} erlaubt). Werte werden nie gerundet."
+      },
+      "recorded": {
+        "low": "Unter dem Minimum – außerhalb der Toleranz",
+        "high": "Über dem Maximum – außerhalb der Toleranz",
+        "invalid": "Kein gültiger Messwert – außerhalb der Toleranz"
+      },
+      "ncrNeeded": "Der Schritt kann erst abgeschlossen werden, wenn für diesen Wert eine NCR erstellt ist.",
+      "ncrCovered": "Eine NCR deckt diesen Wert ab.",
+      "ncrPrefill": "{label}: gemessen {value} {unit}, Grenzwerte {min} bis {max} {unit}."
+    },
+    "photo": {
+      "take": "Foto aufnehmen",
+      "addAnother": "Foto hinzufügen",
+      "countMin": "{n} (min. {min})",
+      "countMinMax": "{n} (min. {min}, max. {max})",
+      "full": "Höchstzahl an Fotos erreicht.",
+      "saving": "Foto wird gespeichert …",
+      "duplicate": "Genau dieses Foto ist bereits erfasst.",
+      "removeSome": "Fotos entfernen",
+      "removeHint": "Zu entfernende Fotos markieren. Mindestens ein Foto muss bleiben; um das einzige Foto zu ersetzen, zuerst das neue hinzufügen.",
+      "remove": "Entfernen",
+      "keep": "Behalten",
+      "saveRemoval": "{n} Foto(s) entfernen"
+    },
+    "scan": {
+      "scanTool": "Werkzeug scannen",
+      "scanPart": "Code scannen",
+      "typeInstead": "Stattdessen eintippen",
+      "empty": "Es wurde nichts gescannt.",
+      "mismatch": "„{value}“ entspricht nicht dem, was dieser Schritt erwartet.",
+      "expectExact": "Erwartet: {value}",
+      "expectPattern": "Erwartetes Format: {pattern}",
+      "toolBlocked": {
+        "expired": "Werkzeug {code}: Kalibrierung abgelaufen. Ein kalibriertes Werkzeug verwenden.",
+        "unknown": "Werkzeug {code} ist nicht im Werkzeugregister.",
+        "inactive": "Werkzeug {code} ist außer Gebrauch."
+      },
+      "offlineToolWarning": "Sie sind offline. Wird es trotzdem erfasst, markiert der Server den Eintrag und der Schritt braucht vor dem Abschluss eine NCR.",
+      "recordAnyway": "Trotzdem erfassen",
+      "ncrNeeded": "Vor dem Abschluss des Schritts eine NCR für dieses Werkzeug erstellen.",
+      "ncrCovered": "Eine NCR deckt dieses Werkzeug ab.",
+      "ncrPrefill": "{label}: Werkzeug {code} verwendet – {status}"
+    },
+    "tool": {
+      "ok": "Kalibrierung gültig",
+      "expired": "Kalibrierung abgelaufen",
+      "unknown": "Nicht im Werkzeugregister",
+      "inactive": "Außer Gebrauch",
+      "due": "fällig {date}"
+    },
+    "signoff": {
+      "sign": "Abzeichnen",
+      "requiresRole": "Erfordert Rolle: {role}",
+      "signedBy": "Abgezeichnet von {name}",
+      "dialogTitle": "Abzeichnen: {label}"
+    },
+    "complete": {
+      "button": "Schritt abschließen",
+      "asOther": "Als andere Person abschließen",
+      "asOtherTitle": "Wer hat diesen Schritt ausgeführt?",
+      "notYet": "Bevor der Schritt abgeschlossen werden kann:",
+      "ready": "Alles Erforderliche ist erfasst."
+    },
+    "problems": {
+      "toolNeedsNcr": "Ein offline erfasstes Werkzeug ist laut Register nicht gültig. Vor dem Abschluss des Schritts eine NCR erstellen."
+    },
+    "verify": {
+      "button": "Schritt prüfen",
+      "dialogTitle": "Schritt prüfen",
+      "notCompleter": "Wer den Schritt abgeschlossen hat, darf ihn nicht prüfen."
+    },
+    "reopen": {
+      "title": "Schritt wieder öffnen",
+      "explain": "Nur Supervisor. Beim Wiederöffnen bleiben alle Einträge erhalten; der Schritt muss erneut abgeschlossen (und geprüft) werden.",
+      "button": "Schritt wieder öffnen",
+      "confirmText": "Warum muss dieser Schritt wieder geöffnet werden?",
+      "continue": "Weiter",
+      "pinTitle": "Bestätigung durch Supervisor"
+    },
+    "notes": {
+      "title": "Notizen",
+      "none": "Keine Notizen.",
+      "add": "Notiz hinzufügen",
+      "system": "System"
+    },
+    "conflict": {
+      "title": "Widersprüchliche Einträge",
+      "explain": "Für diesen Schritt wurden gleichzeitig auf verschiedenen Tablets Einträge gemacht. Bis ein Supervisor entscheidet, welche gelten, sind Schritt und Durchlauf blockiert. Es wird nichts gelöscht: verworfene Einträge bleiben in der Aufzeichnung.",
+      "noneFound": "Auf diesem Tablet wurden keine konkurrierenden Einträge gefunden. Synchronisieren und erneut versuchen.",
+      "pickOne": "Den gültigen Wert wählen.",
+      "stepRecords": "Weitere Einträge dieses Schritts",
+      "device": "Tablet …{id}",
+      "resolve": "Auflösen: {keep} behalten, {reject} verwerfen",
+      "supervisorOnly": "Nur ein Supervisor kann den Konflikt auflösen."
+    },
+    "eventType": {
+      "run_created": "Durchlauf gestartet",
+      "step_started": "Schritt begonnen",
+      "input_recorded": "Wert erfasst",
+      "step_completed": "Schritt abgeschlossen",
+      "step_verified": "Schritt geprüft",
+      "step_reopened": "Schritt wieder geöffnet",
+      "note_added": "Notiz",
+      "ncr_raised": "NCR erstellt",
+      "ncr_dispositioned": "NCR entschieden",
+      "ncr_closed": "NCR geschlossen",
+      "conflict_resolved": "Konflikt aufgelöst",
+      "run_completed": "Durchlauf abgeschlossen",
+      "run_aborted": "Durchlauf abgebrochen"
+    },
+    "errors": {
+      "offline": "Dafür ist eine Verbindung nötig.",
+      "conflict409": "Abgelehnt: jemand anderes hält gerade diesen Schritt oder Durchlauf.",
+      "forbidden": "Das dürfen Sie nicht.",
+      "server": "Serverfehler ({status}). {detail}",
+      "unknown": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
+      "device": "Kamera oder Scanner ist nicht verfügbar."
+    },
+    "home": {
+      "scan": "Scannen",
+      "scanHint": "Etikett eines Arbeitsplatzes, Durchlaufs, Teils oder Werkzeugs scannen, um direkt dorthin zu springen.",
+      "offlineTitle": "Offline",
+      "offlineWorks": "Sie können an Durchläufen weiterarbeiten, die auf dieses Tablet ausgecheckt sind, neue Durchläufe starten (sie werden automatisch hier ausgecheckt), Werte und Fotos erfassen und mit Ihrer PIN abzeichnen. Alles wird hochgeladen, sobald die Verbindung zurück ist.",
+      "offlineReadOnly": "Durchläufe, die nicht auf dieses Tablet ausgecheckt sind, sind bis zur nächsten Verbindung schreibgeschützt.",
+      "thisTablet": "Auf diesem Tablet",
+      "noDeviceRuns": "Auf diesem Tablet ist kein Durchlauf aktiv oder ausgecheckt.",
+      "checkedOut": "Hier ausgecheckt",
+      "startTitle": "Durchlauf starten",
+      "startRun": "Durchlauf starten",
+      "noReleased": "Keine freigegebenen Verfahren auf diesem Tablet. Online synchronisieren.",
+      "recent": "Letzte Durchläufe"
+    },
+    "start": {
+      "title": "Durchlauf starten",
+      "procedure": "Verfahren",
+      "chooseProcedure": "Freigegebenes Verfahren wählen",
+      "revisionNote": "Der Durchlauf folgt Revision {rev}, bis er geschlossen wird – auch wenn eine neuere Revision freigegeben wird.",
+      "scanSerial": "Seriennummer scannen",
+      "scannedPart": "Teileetikett gescannt (Teilenummer {pn}).",
+      "notASerial": "Dieses Etikett ist keine Teile-Seriennummer.",
+      "duplicate": "Für Seriennummer {serial} gibt es bereits einen offenen Durchlauf dieses Verfahrens.",
+      "offline": "Offline: der Durchlauf wird auf diesem Tablet angelegt und hier ausgecheckt. Er wird bei der nächsten Synchronisation hochgeladen.",
+      "submit": "Durchlauf starten"
+    },
+    "list": {
+      "title": "Durchläufe",
+      "filter": "Nach Status filtern",
+      "filters": {
+        "open": "Offen",
+        "active": "Aktiv",
+        "blocked": "Blockiert",
+        "completed": "Abgeschlossen",
+        "aborted": "Abgebrochen",
+        "all": "Alle"
+      },
+      "searchPlaceholder": "Seriennummer oder Auftrag",
+      "scanSerial": "Scannen",
+      "empty": "Keine Durchläufe.",
+      "noMatch": "Kein Durchlauf passt zu „{q}“."
+    },
+    "qr": {
+      "title": "Etikett",
+      "resolving": "Etikett wird gesucht …",
+      "chooseRunWorkstation": "Welcher Durchlauf an {code}?",
+      "chooseRunWorkstationHint": "Mehrere Durchläufe (oder ein anderer als der aktive) haben Schritte an diesem Arbeitsplatz. Den Durchlauf wählen, an dem Sie arbeiten.",
+      "chooseRunPart": "Durchläufe für Seriennummer {serial}",
+      "chooseRunPartHint": "Durchlauf wählen.",
+      "nothingActionable": "An {code} ist für {serial} gerade nichts zu tun",
+      "nothingActionableHint": "Die Schritte hier sind erledigt, warten auf frühere Schritte oder brauchen einen Supervisor.",
+      "openRun": "Durchlauf öffnen",
+      "allRuns": "Alle Durchläufe",
+      "workstationNone": "Kein offener Durchlauf auf diesem Tablet hat Schritte am Arbeitsplatz {code}.",
+      "partNone": "Kein Durchlauf für Teil {pn}, Seriennummer {serial} auf diesem Tablet.",
+      "startWithSerial": "Durchlauf für {serial} starten",
+      "toolTitle": "Werkzeug {code}",
+      "unknown": "Dieser Code ist kein StepTrack-Etikett.",
+      "dismiss": "Schließen"
+    }
+  }
+}

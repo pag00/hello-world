@@ -1,0 +1,66 @@
+{
+  "device": {
+    "scan": {
+      "button": "Scan",
+      "title": "Scan code",
+      "hint": "Hold the QR code or barcode inside the frame",
+      "starting": "Starting camera…",
+      "expectExact": "Expected: {value}",
+      "expectPattern": "Expected format: {pattern}",
+      "torchOn": "Light on",
+      "torchOff": "Light off",
+      "mismatchTitle": "Code does not match",
+      "mismatch": "The scanned code is not what this step expects:",
+      "rescan": "Scan again",
+      "useAnyway": "Use anyway"
+    },
+    "photo": {
+      "button": "Photo",
+      "processing": "Processing photo…"
+    },
+    "ocr": {
+      "button": "Read from photo",
+      "title": "Read value from photo",
+      "reading": "Reading the value…",
+      "value": "Value",
+      "valueHint": "Compare with the display and correct any digit that is wrong.",
+      "candidates": "Other possible readings",
+      "raw": "Recognised text",
+      "confidence": "Confidence {pct} %",
+      "lowConfidence": "Low confidence — check every digit against the display.",
+      "edited": "This value differs from what was recognised. Make sure it matches the display.",
+      "confirm": "Use this value",
+      "retake": "Retake photo",
+      "noReading": "No number could be recognised. Retake the photo, or close this and type the value into the field.",
+      "unavailable": "Reading numbers from photos is not available on this device. Type the value in manually.",
+      "failed": "The value could not be read. Close this and type the value into the field.",
+      "invalid": "Enter a number.",
+      "tooManyDecimals": "At most {n} decimal places — the value is never rounded.",
+      "photoAlt": "Photo of the display"
+    },
+    "errors": {
+      "cameraDenied": "Camera access was denied. Allow camera access for StepTrack in the browser or system settings, then try again.",
+      "noCamera": "No camera was found on this device.",
+      "cameraBusy": "The camera could not be started. Close other apps using the camera and try again.",
+      "insecureContext": "The camera only works over a secure (https) connection.",
+      "scannerUnsupported": "Scanning is not supported on this device. Type the code instead.",
+      "scannerModuleUnavailable": "The Google barcode scanner module is not installed yet. Connect to the internet once so it can be downloaded.",
+      "scannerModuleFailed": "The Google barcode scanner module could not be installed. Check the connection and Google Play services.",
+      "noPreview": "The scanner preview could not be shown.",
+      "ocrUnavailable": "Reading numbers from photos is not available on this device. Type the value in manually.",
+      "ocrFailed": "The value could not be read from the photo. Type it in manually.",
+      "imageUnreadable": "The photo could not be read. Please take it again.",
+      "cameraFailed": "The camera could not take a photo.",
+      "scanFailed": "Scanning failed. Try again or type the code."
+    },
+    "app": {
+      "offlineReady": "StepTrack is ready to work offline.",
+      "updateAvailable": "A new version of StepTrack is available.",
+      "updateHint": "Finish the current step first — updating reloads the app. Recorded data is kept.",
+      "updateNow": "Update now",
+      "later": "Later",
+      "dismiss": "OK",
+      "configError": "StepTrack is not configured correctly: {detail}. Contact your administrator."
+    }
+  }
+}
