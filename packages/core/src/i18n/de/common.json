@@ -1,0 +1,34 @@
+{
+  "common": {
+    "appName": "StepTrack",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "back": "Zurück",
+    "next": "Weiter",
+    "close": "Schließen",
+    "loading": "Lädt…",
+    "retry": "Erneut versuchen",
+    "search": "Suchen",
+    "none": "Keine",
+    "yes": "Ja",
+    "no": "Nein",
+    "required": "Pflicht",
+    "optional": "Optional",
+    "online": "Online",
+    "offline": "Offline",
+    "error": "Etwas ist schiefgelaufen",
+    "onlineOnly": "Diese Aktion erfordert eine Verbindung",
+    "nav": {
+      "home": "Start",
+      "runs": "Durchläufe",
+      "procedures": "Prozeduren",
+      "ncrs": "Abweichungen",
+      "tools": "Werkzeuge",
+      "workstations": "Arbeitsplätze",
+      "settings": "Einstellungen"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "steptrack",
+  "private": true,
+  "packageManager": "pnpm@10.28.0",
+  "scripts": {
+    "dev": "pnpm --filter @steptrack/web dev",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck",
+    "gen:api": "pnpm --filter @steptrack/core gen:api"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.3"
+  }
+}

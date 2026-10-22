@@ -1,0 +1,241 @@
+{
+  "name": "14_conflict",
+  "description": "Two devices recorded the tool scan; server flagged conflict",
+  "revision_content": {
+    "schema": 1,
+    "sections": [
+      {
+        "id": "00000000-0000-7000-8000-000000000011",
+        "title": "Bulkhead",
+        "steps": [
+          {
+            "id": "00000000-0000-7000-8000-000000000008",
+            "title": "Torque M6 bolts",
+            "instructions": "",
+            "media": [],
+            "locations": [
+              "WS-01"
+            ],
+            "depends_on": [],
+            "verification": null,
+            "inputs": [
+              {
+                "id": "00000000-0000-7000-8000-00000000000b",
+                "type": "check",
+                "label": "Bolts lubricated",
+                "required": true
+              },
+              {
+                "id": "00000000-0000-7000-8000-00000000000c",
+                "type": "number",
+                "label": "Torque",
+                "required": true,
+                "unit": "Nm",
+                "min": "11.5",
+                "nominal": "12.0",
+                "max": "12.5",
+                "decimals": 1,
+                "ocr": true
+              }
+            ]
+          },
+          {
+            "id": "00000000-0000-7000-8000-000000000009",
+            "title": "Inspect & photograph",
+            "instructions": "",
+            "media": [],
+            "locations": [
+              "WS-01"
+            ],
+            "depends_on": [
+              "00000000-0000-7000-8000-000000000008"
+            ],
+            "verification": {
+              "required": true,
+              "role": "inspector"
+            },
+            "inputs": [
+              {
+                "id": "00000000-0000-7000-8000-00000000000d",
+                "type": "photo",
+                "label": "Overview",
+                "required": true,
+                "min_count": 1,
+                "max_count": 3
+              },
+              {
+                "id": "00000000-0000-7000-8000-00000000000e",
+                "type": "scan",
+                "label": "Torque wrench",
+                "required": true,
+                "entity": "tool",
+                "expect": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "00000000-0000-7000-8000-000000000012",
+        "title": "Harness",
+        "steps": [
+          {
+            "id": "00000000-0000-7000-8000-00000000000a",
+            "title": "Harness routed",
+            "instructions": "",
+            "media": [],
+            "locations": [
+              "WS-02"
+            ],
+            "depends_on": [],
+            "verification": null,
+            "inputs": [
+              {
+                "id": "00000000-0000-7000-8000-00000000000f",
+                "type": "signoff",
+                "label": "Routed per drawing",
+                "required": true,
+                "role": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "00000000-0000-7000-8000-000000000015",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "run.created",
+      "step_id": null,
+      "payload": {
+        "procedure_id": "00000000-0000-7000-8000-000000000013",
+        "revision_id": "00000000-0000-7000-8000-000000000014",
+        "serial": "SN-001",
+        "work_order": null
+      },
+      "actor_id": "00000000-0000-7000-8000-000000000002",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000006",
+      "client_ts": "2026-10-22T10:00:01.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [],
+      "seq": 1
+    },
+    {
+      "id": "00000000-0000-7000-8000-000000000016",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "input.recorded",
+      "step_id": "00000000-0000-7000-8000-000000000008",
+      "payload": {
+        "input_id": "00000000-0000-7000-8000-00000000000b",
+        "value": true,
+        "source": "manual"
+      },
+      "actor_id": "00000000-0000-7000-8000-000000000002",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000006",
+      "client_ts": "2026-10-22T10:00:02.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [],
+      "seq": 2
+    },
+    {
+      "id": "00000000-0000-7000-8000-000000000017",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "input.recorded",
+      "step_id": "00000000-0000-7000-8000-000000000008",
+      "payload": {
+        "input_id": "00000000-0000-7000-8000-00000000000c",
+        "value": "12.0",
+        "source": "manual"
+      },
+      "actor_id": "00000000-0000-7000-8000-000000000002",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000006",
+      "client_ts": "2026-10-22T10:00:03.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [],
+      "seq": 3
+    },
+    {
+      "id": "00000000-0000-7000-8000-000000000018",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "step.completed",
+      "step_id": "00000000-0000-7000-8000-000000000008",
+      "payload": {},
+      "actor_id": "00000000-0000-7000-8000-000000000002",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000006",
+      "client_ts": "2026-10-22T10:00:04.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [],
+      "seq": 4
+    },
+    {
+      "id": "00000000-0000-7000-8000-00000000001b",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "input.recorded",
+      "step_id": "00000000-0000-7000-8000-000000000009",
+      "payload": {
+        "input_id": "00000000-0000-7000-8000-00000000000e",
+        "value": "TW-017",
+        "source": "manual"
+      },
+      "actor_id": "00000000-0000-7000-8000-000000000002",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000006",
+      "client_ts": "2026-10-22T10:00:05.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [],
+      "seq": 5
+    },
+    {
+      "id": "00000000-0000-7000-8000-000000000026",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "input.recorded",
+      "step_id": "00000000-0000-7000-8000-000000000009",
+      "payload": {
+        "input_id": "00000000-0000-7000-8000-00000000000e",
+        "value": "TW-018",
+        "source": "manual"
+      },
+      "actor_id": "00000000-0000-7000-8000-000000000005",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000007",
+      "client_ts": "2026-10-22T10:00:06.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [
+        "conflict",
+        "unlocked"
+      ],
+      "seq": 6
+    }
+  ],
+  "expected": {
+    "status": "blocked",
+    "can_complete": false,
+    "open_ncr_ids": [],
+    "steps": {
+      "00000000-0000-7000-8000-000000000008": {
+        "state": "completed",
+        "block_reasons": []
+      },
+      "00000000-0000-7000-8000-000000000009": {
+        "state": "conflict",
+        "block_reasons": []
+      },
+      "00000000-0000-7000-8000-00000000000a": {
+        "state": "pending",
+        "block_reasons": []
+      }
+    }
+  }
+}

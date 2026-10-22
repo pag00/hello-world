@@ -1,0 +1,359 @@
+{
+  "name": "07_ncr_closed_full_run",
+  "description": "After NCR disposition + close, run can complete",
+  "revision_content": {
+    "schema": 1,
+    "sections": [
+      {
+        "id": "00000000-0000-7000-8000-000000000011",
+        "title": "Bulkhead",
+        "steps": [
+          {
+            "id": "00000000-0000-7000-8000-000000000008",
+            "title": "Torque M6 bolts",
+            "instructions": "",
+            "media": [],
+            "locations": [
+              "WS-01"
+            ],
+            "depends_on": [],
+            "verification": null,
+            "inputs": [
+              {
+                "id": "00000000-0000-7000-8000-00000000000b",
+                "type": "check",
+                "label": "Bolts lubricated",
+                "required": true
+              },
+              {
+                "id": "00000000-0000-7000-8000-00000000000c",
+                "type": "number",
+                "label": "Torque",
+                "required": true,
+                "unit": "Nm",
+                "min": "11.5",
+                "nominal": "12.0",
+                "max": "12.5",
+                "decimals": 1,
+                "ocr": true
+              }
+            ]
+          },
+          {
+            "id": "00000000-0000-7000-8000-000000000009",
+            "title": "Inspect & photograph",
+            "instructions": "",
+            "media": [],
+            "locations": [
+              "WS-01"
+            ],
+            "depends_on": [
+              "00000000-0000-7000-8000-000000000008"
+            ],
+            "verification": {
+              "required": true,
+              "role": "inspector"
+            },
+            "inputs": [
+              {
+                "id": "00000000-0000-7000-8000-00000000000d",
+                "type": "photo",
+                "label": "Overview",
+                "required": true,
+                "min_count": 1,
+                "max_count": 3
+              },
+              {
+                "id": "00000000-0000-7000-8000-00000000000e",
+                "type": "scan",
+                "label": "Torque wrench",
+                "required": true,
+                "entity": "tool",
+                "expect": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "00000000-0000-7000-8000-000000000012",
+        "title": "Harness",
+        "steps": [
+          {
+            "id": "00000000-0000-7000-8000-00000000000a",
+            "title": "Harness routed",
+            "instructions": "",
+            "media": [],
+            "locations": [
+              "WS-02"
+            ],
+            "depends_on": [],
+            "verification": null,
+            "inputs": [
+              {
+                "id": "00000000-0000-7000-8000-00000000000f",
+                "type": "signoff",
+                "label": "Routed per drawing",
+                "required": true,
+                "role": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "00000000-0000-7000-8000-000000000015",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "run.created",
+      "step_id": null,
+      "payload": {
+        "procedure_id": "00000000-0000-7000-8000-000000000013",
+        "revision_id": "00000000-0000-7000-8000-000000000014",
+        "serial": "SN-001",
+        "work_order": null
+      },
+      "actor_id": "00000000-0000-7000-8000-000000000002",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000006",
+      "client_ts": "2026-10-22T10:00:01.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [],
+      "seq": 1
+    },
+    {
+      "id": "00000000-0000-7000-8000-000000000016",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "input.recorded",
+      "step_id": "00000000-0000-7000-8000-000000000008",
+      "payload": {
+        "input_id": "00000000-0000-7000-8000-00000000000b",
+        "value": true,
+        "source": "manual"
+      },
+      "actor_id": "00000000-0000-7000-8000-000000000002",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000006",
+      "client_ts": "2026-10-22T10:00:02.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [],
+      "seq": 2
+    },
+    {
+      "id": "00000000-0000-7000-8000-000000000017",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "input.recorded",
+      "step_id": "00000000-0000-7000-8000-000000000008",
+      "payload": {
+        "input_id": "00000000-0000-7000-8000-00000000000c",
+        "value": "13.0",
+        "source": "manual"
+      },
+      "actor_id": "00000000-0000-7000-8000-000000000002",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000006",
+      "client_ts": "2026-10-22T10:00:03.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [],
+      "seq": 3
+    },
+    {
+      "id": "00000000-0000-7000-8000-000000000019",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "ncr.raised",
+      "step_id": "00000000-0000-7000-8000-000000000008",
+      "payload": {
+        "ncr_id": "00000000-0000-7000-8000-000000000010",
+        "description": "Overtorqued",
+        "input_id": "00000000-0000-7000-8000-00000000000c"
+      },
+      "actor_id": "00000000-0000-7000-8000-000000000002",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000006",
+      "client_ts": "2026-10-22T10:00:04.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [],
+      "seq": 4
+    },
+    {
+      "id": "00000000-0000-7000-8000-000000000018",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "step.completed",
+      "step_id": "00000000-0000-7000-8000-000000000008",
+      "payload": {},
+      "actor_id": "00000000-0000-7000-8000-000000000002",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000006",
+      "client_ts": "2026-10-22T10:00:05.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [],
+      "seq": 5
+    },
+    {
+      "id": "00000000-0000-7000-8000-00000000001a",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "input.recorded",
+      "step_id": "00000000-0000-7000-8000-000000000009",
+      "payload": {
+        "input_id": "00000000-0000-7000-8000-00000000000d",
+        "value": [
+          "sha256:abababababababababababababababababababababababababababababababab"
+        ],
+        "source": "manual"
+      },
+      "actor_id": "00000000-0000-7000-8000-000000000002",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000006",
+      "client_ts": "2026-10-22T10:00:06.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [],
+      "seq": 6
+    },
+    {
+      "id": "00000000-0000-7000-8000-00000000001b",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "input.recorded",
+      "step_id": "00000000-0000-7000-8000-000000000009",
+      "payload": {
+        "input_id": "00000000-0000-7000-8000-00000000000e",
+        "value": "TW-017",
+        "source": "manual"
+      },
+      "actor_id": "00000000-0000-7000-8000-000000000002",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000006",
+      "client_ts": "2026-10-22T10:00:07.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [],
+      "seq": 7
+    },
+    {
+      "id": "00000000-0000-7000-8000-00000000001c",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "step.completed",
+      "step_id": "00000000-0000-7000-8000-000000000009",
+      "payload": {},
+      "actor_id": "00000000-0000-7000-8000-000000000002",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000006",
+      "client_ts": "2026-10-22T10:00:08.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [],
+      "seq": 8
+    },
+    {
+      "id": "00000000-0000-7000-8000-00000000001d",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "step.verified",
+      "step_id": "00000000-0000-7000-8000-000000000009",
+      "payload": {},
+      "actor_id": "00000000-0000-7000-8000-000000000003",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000006",
+      "client_ts": "2026-10-22T10:00:09.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [],
+      "seq": 9
+    },
+    {
+      "id": "00000000-0000-7000-8000-00000000001e",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "input.recorded",
+      "step_id": "00000000-0000-7000-8000-00000000000a",
+      "payload": {
+        "input_id": "00000000-0000-7000-8000-00000000000f",
+        "value": true,
+        "source": "manual"
+      },
+      "actor_id": "00000000-0000-7000-8000-000000000002",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000006",
+      "client_ts": "2026-10-22T10:00:10.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [],
+      "seq": 10
+    },
+    {
+      "id": "00000000-0000-7000-8000-00000000001f",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "step.completed",
+      "step_id": "00000000-0000-7000-8000-00000000000a",
+      "payload": {},
+      "actor_id": "00000000-0000-7000-8000-000000000002",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000006",
+      "client_ts": "2026-10-22T10:00:11.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [],
+      "seq": 11
+    },
+    {
+      "id": "00000000-0000-7000-8000-000000000020",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "ncr.dispositioned",
+      "step_id": "00000000-0000-7000-8000-000000000008",
+      "payload": {
+        "ncr_id": "00000000-0000-7000-8000-000000000010",
+        "disposition": "use_as_is",
+        "note": "within margin"
+      },
+      "actor_id": "00000000-0000-7000-8000-000000000004",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000006",
+      "client_ts": "2026-10-22T10:00:12.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [],
+      "seq": 12
+    },
+    {
+      "id": "00000000-0000-7000-8000-000000000021",
+      "run_id": "00000000-0000-7000-8000-000000000001",
+      "type": "ncr.closed",
+      "step_id": "00000000-0000-7000-8000-000000000008",
+      "payload": {
+        "ncr_id": "00000000-0000-7000-8000-000000000010"
+      },
+      "actor_id": "00000000-0000-7000-8000-000000000004",
+      "auth_method": "oidc",
+      "device_id": "00000000-0000-7000-8000-000000000006",
+      "client_ts": "2026-10-22T10:00:13.000Z",
+      "offline": false,
+      "supersedes": null,
+      "flags": [],
+      "seq": 13
+    }
+  ],
+  "expected": {
+    "status": "active",
+    "can_complete": true,
+    "open_ncr_ids": [],
+    "steps": {
+      "00000000-0000-7000-8000-000000000008": {
+        "state": "completed",
+        "block_reasons": []
+      },
+      "00000000-0000-7000-8000-000000000009": {
+        "state": "verified",
+        "block_reasons": []
+      },
+      "00000000-0000-7000-8000-00000000000a": {
+        "state": "completed",
+        "block_reasons": []
+      }
+    }
+  }
+}

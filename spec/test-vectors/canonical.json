@@ -1,0 +1,154 @@
+{
+  "cases": [
+    {
+      "name": "scalars",
+      "value": [
+        null,
+        true,
+        false,
+        0,
+        -1,
+        9007199254740991,
+        ""
+      ],
+      "canonical": "[null,true,false,0,-1,9007199254740991,\"\"]",
+      "hash": "sha256:030ff6aa97f3a8570cc7e939714e1b5423fe0cc17d7a7aa811ed6264df67bc39"
+    },
+    {
+      "name": "key_order",
+      "value": {
+        "b": 1,
+        "a": 2,
+        "A": 3,
+        "_": 4,
+        "aa": 5
+      },
+      "canonical": "{\"A\":3,\"_\":4,\"a\":2,\"aa\":5,\"b\":1}",
+      "hash": "sha256:19d956011111ed51feec9cf491cf1e9348fd9bda83095005680ecf35c17cca65"
+    },
+    {
+      "name": "escapes",
+      "value": "quote\" backslash\\ nl\n tab\t cr\r bs\b ff\f nul\u0000 us\u001f del",
+      "canonical": "\"quote\\\" backslash\\\\ nl\\n tab\\t cr\\r bs\\b ff\\f nul\\u0000 us\\u001f del\"",
+      "hash": "sha256:0ec9218a74301069525f46f447fadf89d989b6dfd89f9e1474f53b8be1fa4eda"
+    },
+    {
+      "name": "unicode",
+      "value": {
+        "ü": "Drehmoment µ Ω 測定 🚀",
+        "z": "é"
+      },
+      "canonical": "{\"z\":\"é\",\"ü\":\"Drehmoment µ Ω 測定 🚀\"}",
+      "hash": "sha256:494c69e9a1c74cb9b1bb7bc0a3efa4f828f5515196db8fb319d6c0dde6392736"
+    },
+    {
+      "name": "astral_key_order",
+      "value": {
+        "￿": 1,
+        "🚀": 2,
+        "a": 3
+      },
+      "canonical": "{\"a\":3,\"￿\":1,\"🚀\":2}",
+      "hash": "sha256:39dfb3cc4f68bd92fec8d47e937447454a302c9138877c977dd721fe92524d86"
+    },
+    {
+      "name": "nested",
+      "value": {
+        "x": [
+          {
+            "b": [
+              1,
+              {
+                "d": null,
+                "c": "2"
+              }
+            ],
+            "a": {}
+          },
+          []
+        ]
+      },
+      "canonical": "{\"x\":[{\"a\":{},\"b\":[1,{\"c\":\"2\",\"d\":null}]},[]]}",
+      "hash": "sha256:73de9488d5002fc6b65385be221da0772a4d899c7cdfec5bd4b5131a8ddf52d7"
+    },
+    {
+      "name": "event",
+      "value": {
+        "id": "0192b7a0-0000-7000-8000-000000000001",
+        "run_id": "0192b7a0-0000-7000-8000-0000000000aa",
+        "type": "input.recorded",
+        "step_id": "0192b7a0-0000-7000-8000-0000000000bb",
+        "payload": {
+          "input_id": "0192b7a0-0000-7000-8000-0000000000cc",
+          "value": "12.50",
+          "source": "ocr",
+          "ocr_raw": "12.5O"
+        },
+        "actor_id": "0192b7a0-0000-7000-8000-0000000000dd",
+        "auth_method": "pin",
+        "device_id": "0192b7a0-0000-7000-8000-0000000000ee",
+        "client_ts": "2026-10-22T10:31:05.123Z",
+        "offline": true,
+        "supersedes": null
+      },
+      "canonical": "{\"actor_id\":\"0192b7a0-0000-7000-8000-0000000000dd\",\"auth_method\":\"pin\",\"client_ts\":\"2026-10-22T10:31:05.123Z\",\"device_id\":\"0192b7a0-0000-7000-8000-0000000000ee\",\"id\":\"0192b7a0-0000-7000-8000-000000000001\",\"offline\":true,\"payload\":{\"input_id\":\"0192b7a0-0000-7000-8000-0000000000cc\",\"ocr_raw\":\"12.5O\",\"source\":\"ocr\",\"value\":\"12.50\"},\"run_id\":\"0192b7a0-0000-7000-8000-0000000000aa\",\"step_id\":\"0192b7a0-0000-7000-8000-0000000000bb\",\"supersedes\":null,\"type\":\"input.recorded\"}",
+      "hash": "sha256:0246bdd6345e754c16a08d5d3d2ae17b5100325d7ce7e92762f0a3281b402dc7"
+    }
+  ],
+  "chain": {
+    "events": [
+      {
+        "id": "0192b7a0-0000-7000-8000-000000000001",
+        "run_id": "0192b7a0-0000-7000-8000-0000000000aa",
+        "type": "input.recorded",
+        "step_id": "0192b7a0-0000-7000-8000-0000000000bb",
+        "payload": {
+          "input_id": "0192b7a0-0000-7000-8000-0000000000cc",
+          "value": "12.50",
+          "source": "ocr",
+          "ocr_raw": "12.5O"
+        },
+        "actor_id": "0192b7a0-0000-7000-8000-0000000000dd",
+        "auth_method": "pin",
+        "device_id": "0192b7a0-0000-7000-8000-0000000000ee",
+        "client_ts": "2026-10-22T10:31:05.123Z",
+        "offline": true,
+        "supersedes": null
+      },
+      {
+        "id": "0192b7a0-0000-7000-8000-000000000002",
+        "run_id": "0192b7a0-0000-7000-8000-0000000000aa",
+        "type": "step.completed",
+        "step_id": "0192b7a0-0000-7000-8000-0000000000bb",
+        "payload": {},
+        "actor_id": "0192b7a0-0000-7000-8000-0000000000dd",
+        "auth_method": "oidc",
+        "device_id": "0192b7a0-0000-7000-8000-0000000000ee",
+        "client_ts": "2026-10-22T10:31:05.123Z",
+        "offline": false,
+        "supersedes": null
+      }
+    ],
+    "content_hashes": [
+      "sha256:0246bdd6345e754c16a08d5d3d2ae17b5100325d7ce7e92762f0a3281b402dc7",
+      "sha256:5de2bc2dad4663ddeaa5040bd523cec7956bce272dd8e3f688cb9c17101e95de"
+    ],
+    "chain_hashes": [
+      "sha256:0d06b87dbdcc9a0dbfdacc1f4ef98b3ed2773f5f97d77e3be625cbb9704b3b7a",
+      "sha256:7841a1f53d7d6af8f06834a264f4c49d0409e19adaccc60c5a85acdc2253a6b7"
+    ],
+    "genesis": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "rejects": [
+    {
+      "name": "float",
+      "value": {
+        "v": 1.5
+      }
+    },
+    {
+      "name": "big_int",
+      "value": 9007199254740992
+    }
+  ]
+}
